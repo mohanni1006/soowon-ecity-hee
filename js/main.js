@@ -132,7 +132,7 @@ async function submitReservation(event) {
   event.preventDefault();
 
   // 👉 변경된 디스코드 웹후크 URL
-  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1559512004874469476/WilYfRc1SuGOPO8TB4U87NzrNgzywZBMk3Cim4JXxlkA6M_l111t15vh3NFqpGbF-xR5";
+  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1559551252281434123/0_Yethl2UW8J5xLn8C6EGk3ANOIYXD-LPUT7AbtDfyzLC1tdeCENZ6YPB2Rk-S97v0Pt";
 
   const agree = document.getElementById('formAgree').checked;
   if (!agree) {
