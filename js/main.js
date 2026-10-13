@@ -93,9 +93,9 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 7. 문자(SMS) 자동 발송 엔진 (관리자 안수흥: 010-5949-2430 수신 / 90바이트 이하 최적화)
+// 7. 문자(SMS) 자동 발송 엔진 (관리자 김태희: 010-7577-7738 수신 / 90바이트 이하 최적화)
 async function sendSmsNotification(data) {
-  const ADMIN_PHONE = "010-5949-2430";
+  const ADMIN_PHONE = "010-7577-7738";
   
   // 👉 90바이트 이내로 맞춘 단문 SMS 양식
   let smsMessage = `[e편한세상고색] ${data.name} ${data.phone}\n방문: ${data.visitDate} ${data.visitTime}\n타입: ${data.interest}`;
@@ -131,8 +131,8 @@ async function sendSmsNotification(data) {
 async function submitReservation(event) {
   event.preventDefault();
 
-  // 👉 전달해주신 새로운 디스코드 웹후크 URL
-  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1559510322405179413/8AhfwtzrCxa5QQZvkNRke1cE7Ow545hCjYQZm0TfZHm8l1BMo8SZKNCKpJghfcgb_Om8";
+  // 👉 변경된 디스코드 웹후크 URL
+  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1559512004874469476/WilYfRc1SuGOPO8TB4U87NzrNgzywZBMk3Cim4JXxlkA6M_l111t15vh3NFqpGbF-xR5";
 
   const agree = document.getElementById('formAgree').checked;
   if (!agree) {
@@ -171,7 +171,7 @@ async function submitReservation(event) {
     username: "e편한세상시티 고색 알림봇",
     embeds: [
       {
-        title: "📢 [안수흥] 신규 방문예약 접수 완료!",
+        title: "📢 [김태희] 신규 방문예약 접수 완료!",
         color: 16738816, // e편한세상 시그니처 오렌지 컬러 (#FF6A00)
         fields: [
           { name: "👤 고객 성함", value: `**${name}**`, inline: true },
@@ -183,7 +183,7 @@ async function submitReservation(event) {
           { name: "⏱ 접수 일시", value: submitTime, inline: false }
         ],
         footer: {
-          text: "e편한세상 시티 고색 공식 분양홍보관 (담당: 안수흥 | 대표문의: 1600-2430)"
+          text: "e편한세상 시티 고색 공식 분양홍보관 (담당: 김태희 | 대표문의: 1833-4795)"
         }
       }
     ]
@@ -202,7 +202,7 @@ async function submitReservation(event) {
     ]);
 
     if (discordRes.ok || discordRes.status === 204) {
-      alert("방문 예약이 정상 접수되었습니다.\n담당자(안수흥)가 예약 일시 확인 후 신속히 안내 연락드리겠습니다.");
+      alert("방문 예약이 정상 접수되었습니다.\n담당자(김태희)가 예약 일시 확인 후 신속히 안내 연락드리겠습니다.");
       document.getElementById('consultForm').reset();
     } else {
       const errText = await discordRes.text();
@@ -227,16 +227,16 @@ function toggleFloatingMenu(forceState) {
   }
 }
 
-// 10. 다이렉트 문자(SMS) 연결 (관리자: 010-5949-2430 수신)
+// 10. 다이렉트 문자(SMS) 연결 (관리자: 010-7577-7738 수신)
 function openDirectSms() {
-  const ADMIN_PHONE = "010-5949-2430";
+  const ADMIN_PHONE = "010-7577-7738";
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     const separator = isIOS ? '&' : '?';
-    window.location.href = `sms:${ADMIN_PHONE}${separator}body=${encodeURIComponent('[e편한세상고색/안수흥] 상담 문의합니다.')}`;
+    window.location.href = `sms:${ADMIN_PHONE}${separator}body=${encodeURIComponent('[e편한세상고색/김태희] 상담 문의합니다.')}`;
   } else {
-    alert(`모바일 기기에서 터치하시면 바로 문자(SMS) 전송 화면으로 연결됩니다.\n연락처: 1600-2430 (직통: ${ADMIN_PHONE})`);
+    alert(`모바일 기기에서 터치하시면 바로 문자(SMS) 전송 화면으로 연결됩니다.\n연락처: 1833-4795 (직통: ${ADMIN_PHONE})`);
   }
 }
 
