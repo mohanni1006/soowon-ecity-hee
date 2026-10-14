@@ -9,7 +9,7 @@
   <meta name="description" content="권선행정타운 & 덕산종합병원 바로 앞! DL이앤씨 e편한세상 주거형 랜드마크 430실. 2024년 10월 준공 완료로 즉시 입주 가능, 전 세대 전용 84㎡ 잔여 로얄층 특별 분양.">
   <meta name="keywords" content="e편한세상시티고색, e편한세상고색, 고색동오피스텔, 권선행정타운, 수원덕산병원, 탑동이노베이션밸리, 고색역아파트, e편한세상분양가, 김태희">
 
-  <!-- Open Graph -->
+  <!-- Open Graph (갤럭시 문자 및 메신저 미리보기 카드용 절대경로) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mohanni1006.github.io/soowon-ecity-hee/">
   <meta property="og:title" content="e편한세상 시티 고색 | 공식 분양홍보관 (담당: 김태희)">
@@ -465,7 +465,8 @@
         </span>
       </a>
 
-      <a href="javascript:openDirectSms();" class="floating-sub-item">
+      <!-- 문자 상담 바로가기 (010-7577-7738) -->
+      <a href="sms:010-7577-7738?body=안녕하세요.%20e편한세상%20시티%20고색%20분양상담%20문의드립니다." class="floating-sub-item">
         <span class="sub-item-label">문자예약상담신청</span>
         <span class="sub-item-circle">
           <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
@@ -517,7 +518,16 @@
     </div>
   </div>
 
-  <!-- 스크립트 연결 -->
+  <!-- 기존 스크립트 파일 연결 -->
   <script src="js/main.js"></script>
+
+  <!-- 문자 상담 스크립트 보완 (JS 파일 수정 없이 010-7577-7738 연결) -->
+  <script>
+    function openDirectSms() {
+      var phone = "01075777738";
+      var msg = encodeURIComponent("안녕하세요. e편한세상 시티 고색 분양상담 문의드립니다.");
+      location.href = "sms:" + phone + "?body=" + msg;
+    }
+  </script>
 </body>
 </html>
